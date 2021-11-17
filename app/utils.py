@@ -1,11 +1,6 @@
 import requests
 import re
 
-# https://api.henrikdev.xyz/valorant/v1/store-featured
-# https://dash.valorant-api.com/endpoints/themes
-# https://github.com/Henrik-3/unofficial-valorant-api
-# https://github.com/RumbleMike/ValorantClientAPI
-
 
 def get_user_data(username, password):
     session = requests.session()
