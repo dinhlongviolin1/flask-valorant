@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from utils import get_shop_data
+from .utils import get_shop_data
 
 app = Flask(__name__)
 CORS(app)
@@ -23,7 +23,3 @@ def store_data():
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({"message": "Restful API is running!"})
-
-
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8000)
