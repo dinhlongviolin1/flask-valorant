@@ -18,7 +18,7 @@ def get_user_data(username, password):
         "access_token=((?:[a-zA-Z]|\d|\.|-|_)*).*id_token=((?:[a-zA-Z]|\d|\.|-|_)*).*expires_in=(\d*)"
     )
     if "error" in r.json():
-        raise Exception("Login Error!")
+        raise RuntimeError("Login Error!")
     data = pattern.findall(r.json()["response"]["parameters"]["uri"])[0]
     access_token = data[0]
 

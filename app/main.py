@@ -16,8 +16,25 @@ def store_data():
         return jsonify(
             get_shop_data(body["username"], body["password"], body["region"])
         )
+    except RuntimeError as re:
+        return (
+            jsonify(
+                {
+                    "error": str(re)
+                    + " Make sure all fields (username, password, region) are correctly filled"
+                }
+            ),
+            200,
+        )
     except Exception as e:
-        return jsonify({"error": str(e)}), 200
+        return (
+            jsonify(
+                {
+                    "error": "There was a problem fetching your data! Make sure all fields (username, password, region) are correctly filled"
+                }
+            ),
+            200,
+        )
 
 
 @app.route("/", methods=["GET"])
