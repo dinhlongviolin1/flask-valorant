@@ -81,7 +81,7 @@ def get_single_skins_data(skin_uuid_list):
                             "name": skin["displayName"],
                             "imgUrl": image_url,
                             "price": price,
-                            "contentTierColor": content_tier_highlight_color,
+                            "contentTierColor": "#" + content_tier_highlight_color[:-2],
                             "contentTierImg": content_tier_img_url,
                         }
                     )
